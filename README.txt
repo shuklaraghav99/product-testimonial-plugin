@@ -59,7 +59,7 @@ Assumptions Made
   2) Product Testimonial Post Type: The plugin creates a custom post type product_testimonial to store testimonials.
 
 
-Bonus: Suggestions for Future Improvements
+Suggestions for Future Improvements
   1) Integration with WooCommerce Reviews:
   Combine the testimonial feature with WooCommerce's native review system. Allow users to submit testimonials as part of the review process.
   
