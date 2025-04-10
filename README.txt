@@ -19,13 +19,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
   After uploading the plugin, go to Plugins > Installed Plugins and activate the "Product Testimonial Plugin".
 
-3 How to Test the Code
+4 How to Test the Code
 
   1) Add Testimonials:
   
   Go to Product Testimonial in the WordPress Admin menu.
   
   Click Add New Testimonial and enter the necessary details (rating, product selection, and testimonial content).
+  The [product_testimonials] shortcode accepts a product_id attribute to display testimonials for a specific product.
+  The shortcode will fetch testimonials related to the specified product and display them wherever the shortcode is placed.
   
   2) Viewing Testimonials on the Product Page:
   
@@ -51,7 +53,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   GET /wp-json/wpcom/v1/testimonials?product_id=<PRODUCT_ID>
   This will return a list of testimonials for the specified product.
 
+6 Dynamic Product Badge ("Best Seller"):
+  
+  Go to any product page or shop page.
+  If the product has sold more than 100 units, the "Best Seller" badge will visible on the product page.
 
+7 Cart Page Free Gift Suggestion:
+
+  Add products to your cart.
+  If the cart subtotal exceeds $500, a message will be appear on the cart page offering a free gift.
 
 Assumptions Made
   1) WooCommerce Plugin: Assumes WooCommerce is installed and active on the WordPress site, as the plugin relies on WooCommerce's features.
