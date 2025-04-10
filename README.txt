@@ -1,114 +1,84 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: 
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
-License: GPLv2 or later
+=== product-testimonial-plugin ===
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+ Installation Instructions
+1 Download the Plugin:
+  
+  Clone the repository or download the ZIP file of the plugin:
+  git clone https://github.com/shuklaraghav99/product-testimonial-plugin.git
 
-== Description ==
+2 Upload the Plugin to WordPress:
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+  Go to the Plugins section in your WordPress admin dashboard.
+  
+  Click Add New and then Upload Plugin.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+  Upload the ZIP file if you've downloaded it, or upload the plugin folder after cloning it into your wp-content/plugins directory.
 
-A few notes about the sections above:
+3 Activate the Plugin:
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+  After uploading the plugin, go to Plugins > Installed Plugins and activate the "Product Testimonial Plugin".
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+3 How to Test the Code
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+  1) Add Testimonials:
+  
+  Go to Product Testimonial in the WordPress Admin menu.
+  
+  Click Add New Testimonial and enter the necessary details (rating, product selection, and testimonial content).
+  
+  2) Viewing Testimonials on the Product Page:
+  
+  Go to a product page on the front-end.
+  
+  If you've added testimonials for that product, they will appear in the Description tab.
+  
+  3) Free Gift Suggestion:
+  
+  Add products to your cart totaling more than 500 (or adjust the threshold in the code).
+  
+  Go to the cart page, and a message will appear suggesting a free gift.
 
-== Installation ==
+4 Test the REST API Endpoint:
 
-This section describes how to install the plugin and get it working.
+  Make a GET request to the following endpoint to retrieve the order details:
+  GET /wp-json/wbcom/v1/order-details?order_id=<ORDER_ID>
+  You need to be logged in to access this endpoint.
 
-e.g.
+5 Test Testimonials REST API Endpoint:
 
-1. Upload `plugin_slug.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+  Use the following endpoint to get testimonials for a product:
+  GET /wp-json/wpcom/v1/testimonials?product_id=<PRODUCT_ID>
+  This will return a list of testimonials for the specified product.
 
-== Frequently Asked Questions ==
 
-= A question that someone might have =
 
-An answer to that question.
+Assumptions Made
+  1) WooCommerce Plugin: Assumes WooCommerce is installed and active on the WordPress site, as the plugin relies on WooCommerce's features.
+  
+  2) Product Testimonial Post Type: The plugin creates a custom post type product_testimonial to store testimonials.
 
-= What about foo bar? =
 
-Answer to foo bar dilemma.
+Bonus: Suggestions for Future Improvements
+  1) Integration with WooCommerce Reviews:
+  Combine the testimonial feature with WooCommerce's native review system. Allow users to submit testimonials as part of the review process.
+  
+  3) Testimonial Display Enhancements:
+  Implement a more flexible and visually appealing testimonial display (e.g., grid layout, carousel, etc.) on the product pages.
+  
+  4) Frontend Testimonial Submission:
+  Implement a frontend submission form for users to add testimonials directly from the product page without needing to access the admin panel.
 
-== Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+License
+  This plugin is licensed under the GPL v2 license. You can freely use, modify, and distribute the code, as long as you comply with the terms of the GPL license.
 
-== Changelog ==
+Contact Information
+  For any further questions or support, please contact Raghav at raghav.career99@gmail.com or raise an issue in the GitHub repository.
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+Contributing
+  If you'd like to contribute to the project, feel free to fork the repository, create a branch, and submit a pull request. Contributions, bug reports, and suggestions are always welcome!
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+Changelog
+  Version 1.0:
+  Initial release with product testimonial functionality and display on product pages.
